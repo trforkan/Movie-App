@@ -1,0 +1,14 @@
+<div class="container">
+    <h2 class="container-title">{{title}}</h2>
+    <div class="grid" >
+        <!-- <pre>{{MoviesList | json}}sesh</pre> -->
+        <div class="col-6 md:col-3 lg:col-3" *ngFor="let item of MoviesList">
+            <!-- <pre>{{item | json}}</pre> -->
+            <app-movie-item [itemData]="item" [movieType]="movieType"></app-movie-item>
+        </div>
+    </div>
+    <div>
+        <p-paginator [rows]="20" [totalRecords]="10000" (onPageChange)="paginate($event)"></p-paginator>
+    </div>
+</div>
+ 

@@ -1,0 +1,17 @@
+<app-slider [items]="popularMovies"></app-slider>
+<!-- <pre>{{movies.results | json}}</pre> -->
+<!-- <app-items-banner title='Upcoming Movies' [items]="upcomingMovies"></app-items-banner> -->
+<p-tabView>
+    <p-tabPanel header="Popular Movies">
+        <app-items-banner title='Popular Movies'></app-items-banner>
+    </p-tabPanel>
+    <p-tabPanel header="Upcoming Movies">
+        <app-items-banner title='Upcoming Movies'></app-items-banner>
+    </p-tabPanel>
+    <p-tabPanel header="Top Rated Movies">
+        <app-items-banner title='Top Rated Movies'></app-items-banner>
+    </p-tabPanel>
+</p-tabView>
+
+<!-- <app-items-banner title="Top Rated Movies" [items]="topRatedMovies"></app-items-banner>
+<app-items-banner title="Now Playing Movies" [items]="nowPlayingMovies"></app-items-banner> -->

@@ -1,0 +1,27 @@
+.poster {
+    font-family: 'Ubuntu Mono', monospace;
+    max-width: 100%;
+}
+
+.overview {
+    font-family: 'Ubuntu Mono', monospace;
+    line-height: 1.4rem;
+}
+h3  {
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+.stat {
+    font-family: 'Ubuntu Mono', monospace;
+    display: flex;
+    margin-bottom: 15px;
+    .label {
+        width: 120px;
+        font-weight: bold;
+    }
+    .value {
+        color: #81c784;
+        font-weight: bold;
+        // font-style: italic;
+    }
+}

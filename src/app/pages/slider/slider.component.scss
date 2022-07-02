@@ -1,0 +1,86 @@
+.slider {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 35rem;
+    color: #999;
+    background-color: #000;
+    position: relative;
+    .slide {
+        position: absolute;
+        display: flex;
+        height: 35rem;
+        width: 100%;
+        &-bg {
+            position: relative;
+            display: flex;
+            flex: 1 1 auto;
+            &:after {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                display: block;
+                content: "";
+
+                background-image: linear-gradient(
+                    to right,
+                    #000 0,
+                    transparent 85%,
+                    transparent 100%
+                );
+
+            }
+
+            img {
+                height: 100%;
+                width : 100%;
+                object-fit: cover;
+            }
+        }
+        &-pane {
+            position: absolute;
+            width: 45%;
+            top: 5rem;
+            left: 5rem;
+            .name {
+                font-size: 2.5rem;
+                color: #fff;
+            } 
+            .meta {
+                font-size: 1.3rem;
+                color: #999; 
+                .info {
+                    display: flex;
+                    > span {
+                        &:not(:last-child):after {
+                            content: "|";
+                            margin-left: 9px;
+                            margin-right: 9px;
+                        }
+                    }
+                    .rating {
+                        align-items: center;
+                        display: flex;
+                        .material-icons {
+                            margin-right: 5px;
+                            color: gold;
+                        }
+                        &-val {
+                            font-size: 1.7rem;
+                            color: #fff;
+                        }
+
+                    }
+                }
+            }
+            .desc {
+                color: #fff;
+                font-size: 1.2 rem;
+                line-height: 1.5rem;
+            }
+        }
+    }
+} 

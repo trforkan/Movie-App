@@ -1,0 +1,31 @@
+<!-- <pre>{{items | json}}</pre> -->
+<!-- <div *ngFor="let item of items">
+    {{item.title}}
+</div>
+hello -->
+
+<div class="slider">
+    <ng-container *ngFor="let item of items; let i = index" >
+
+        <div class="slide" *ngIf="i == currentSlideIndex" @slideFade>
+            <div class="slide-bg">
+                <img [src]="'https://image.tmdb.org/t/p/'+ imgSizes.large + item.backdrop_path" />
+            </div>
+            <div class="slide-pane">
+                <h1 class="name">{{ item.title }}</h1>
+                <div class="meta">
+                    <div class="info">
+                        <span class="rating">
+                            <span class="material-icons">star</span><span class="rating-val">{{ item.vote_average }}</span><span>/10</span>
+                        </span>
+                        <span class="review">{{ item.vote_count }}</span>
+                        <span class="date">{{ item.release_date | date: "yyyy" }}</span>
+                    </div>
+                </div>
+                <div class="desc mt-4">{{ item.overview }}</div>
+            </div>
+        </div>
+        
+    </ng-container>
+    
+</div>
