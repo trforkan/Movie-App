@@ -40,17 +40,35 @@
                     
                 </div>
             </div>
+            <!-- <div class="grid"> -->
+                <!-- <ng-container *ngFor="let item of MovieCast">
+                    <img [src]="baseUrl+imgSizes.small+item.profile_path" alt="">
+                </ng-container> -->
+                <p-carousel [numScroll]="5" *ngIf = "MovieCast" [numVisible]="5" [value]="MovieCast">
+                    <ng-template let-actor pTemplate="item">
+                        <div class="actor">
+                            <img [src]="baseUrl+imgSizes.small+actor.profile_path" alt="">
+                            <div class="act-name">Name:&nbsp;{{actor.name}}</div>
+                            <div class="act-name">Character:&nbsp;{{actor.character}}</div>
+                        </div>
+                    </ng-template>
+                </p-carousel>
+            <!-- </div> -->
         </p-tabPanel>
+
+
         <p-tabPanel header="Videos">
             <div class="grid">
                 <ng-container *ngFor="let movieVideo of movieVideos">
-                    <!-- <pre>{{movieVideo | json}}</pre> -->
+
                     <div class="col-12 mb:col-4 lg:col-4">
                         <app-video-embed [key]="movieVideo.key"></app-video-embed>
                     </div>
                 </ng-container>
             </div>
         </p-tabPanel>
+
+
         <p-tabPanel header="Photos">
 
             <div class="grid">

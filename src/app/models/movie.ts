@@ -36,8 +36,12 @@ export interface MovieImages {
 } 
 
 export interface Genre {
-    id: number;
+    id: string;
     name: string;
+}
+
+export interface GenresDto {
+    genres: Genre[];
 }
 
 export interface MovieVideoDto {
@@ -57,4 +61,15 @@ export interface MovieDto {
 export interface Photo {
     id: number;
     backdrops: MovieImages[];
+}
+
+export interface Credits {
+    id: number;
+    cast: CAST[];
+}
+
+export interface CAST {
+    name: string;
+    profile_path: string;
+    character: string;
 }

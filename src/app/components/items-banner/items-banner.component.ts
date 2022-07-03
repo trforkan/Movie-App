@@ -9,9 +9,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ItemsBannerComponent implements OnInit {
 
-  popularMoviesList: Movie[] = [];
-  upcomingMoviesList: Movie[] = [];
-  topRatedMoviesList: Movie[] = [];
+  // popularMoviesList: Movie[] = [];
+  // upcomingMoviesList: Movie[] = [];
+  // topRatedMoviesList: Movie[] = [];
 
   MoviesList: Movie[] = [];
 
@@ -36,6 +36,7 @@ export class ItemsBannerComponent implements OnInit {
     this.getPagedMovies(1);
 
   }
+  
 
   getPagedMovies(page: number){
     this.moviesService.searchMovies(page , this.movieType).subscribe(MoviesList => {

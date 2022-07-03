@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GenresComponent } from './genres.component';
+import { TvItemBannerComponent } from './tv-item-banner.component';
 
-describe('GenresComponent', () => {
-  let component: GenresComponent;
-  let fixture: ComponentFixture<GenresComponent>;
+describe('TvItemBannerComponent', () => {
+  let component: TvItemBannerComponent;
+  let fixture: ComponentFixture<TvItemBannerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GenresComponent ]
+      declarations: [ TvItemBannerComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GenresComponent);
+    fixture = TestBed.createComponent(TvItemBannerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

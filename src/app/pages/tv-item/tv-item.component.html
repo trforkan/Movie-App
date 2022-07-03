@@ -1,0 +1,15 @@
+<ng-container  *ngIf="itemData">
+    <!-- <pre>{{itemData.id|json}}</pre> -->
+    <a class="tvShow-item" [routerLink]="'/tv_show/'+itemData.id">
+        <!-- {{itemData.id}} -->
+        <div class="tvShow-item-rating">
+            <i class="material-icons">star</i>
+            <span>{{itemData.vote_average}}</span>/10
+        </div> 
+        <div class="tvShow-item-image">
+            <a href=""></a>
+            <img [src]="'https://image.tmdb.org/t/p/'+imgSizes.small + itemData.poster_path">
+        </div>
+        <div class="tvShow-item-title">{{itemData.name}}</div>
+    </a>
+</ng-container>

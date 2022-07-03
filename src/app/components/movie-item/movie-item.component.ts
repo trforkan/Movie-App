@@ -24,7 +24,7 @@ export class MovieItemComponent implements OnInit {
     // this.movies.searchMovies(2,this.movieType).subscribe((response)=>{
     //   this.items = response ;
     // })
-    console.log(this.itemData);
+    // console.log(this.itemData);
   }
 
 }

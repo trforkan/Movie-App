@@ -1,3 +1,6 @@
+@import '../tv-shows/tv-shows.component.scss';
+
+
 .poster {
     font-family: 'Ubuntu Mono', monospace;
     max-width: 100%;
@@ -16,7 +19,7 @@ h3  {
     display: flex;
     margin-bottom: 15px;
     .label {
-        width: 120px;
+        width: 180px;
         font-weight: bold;
     }
     .value {
@@ -30,6 +33,7 @@ h3  {
     padding: 10px;
     img {
         width: 100%;
+        // width: 180px;
         border-radius: 5px;
     }
     .act-name{

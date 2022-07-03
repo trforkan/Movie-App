@@ -1,2 +1,40 @@
-<h1 style="display:flex; justify-content:center">This Page will be updated soon!</h1>
-<h1> <a style="display:flex; justify-content:center; color: white" href="/">Return Home </a></h1>
+<div class="slider">
+    <ng-container *ngFor="let item of items; let i = index" >
+
+        <div class="slide" *ngIf="i == currentSlideIndex" @slideFade>
+            <div class="slide-bg">
+                <img [src]="'https://image.tmdb.org/t/p/'+ imgSizes.large + item.backdrop_path" />
+            </div>
+            <div class="slide-pane">
+                <h1 class="name">{{ item.name }}</h1>
+                <div class="meta">
+                    <div class="info">
+                        <span class="rating">
+                            <span class="material-icons">star</span><span class="rating-val">{{ item.vote_average }}</span><span>/10</span>
+                        </span>
+                        <span class="review">{{ item.vote_count }}</span>
+                        <span class="date">{{ item.first_air_date | date: "yyyy" }}</span>
+                    </div>
+                </div>
+                <div class="desc mt-4">{{ item.overview }}</div>
+            </div>
+        </div>
+        
+    </ng-container>
+    
+</div>
+<p-tabView>
+    <p-tabPanel header="Popular Tv Shows">
+        <app-tv-item-banner title="Popular Tv Shows"></app-tv-item-banner>
+    </p-tabPanel>
+    <p-tabPanel header="Tv Airing Today">
+        <app-tv-item-banner title="Tv Airing Today"></app-tv-item-banner>
+    </p-tabPanel>
+    <p-tabPanel header="Tv On The Air">
+        <app-tv-item-banner title="Tv On The Air"></app-tv-item-banner>
+    </p-tabPanel>
+    <p-tabPanel header="Top Rated Tv Shows">
+        <app-tv-item-banner title='Top Rated Tv Shows'></app-tv-item-banner>
+    </p-tabPanel>
+</p-tabView>
+<!-- <app-tv-item-banner></app-tv-item-banner> -->

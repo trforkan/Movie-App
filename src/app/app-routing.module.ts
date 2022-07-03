@@ -1,29 +1,33 @@
+import { TvShowDataComponent } from './pages/tv-show-data/tv-show-data.component';
+import { TvItemComponent } from './pages/tv-item/tv-item.component';
 import { Movie } from './models/movie';
 import { MovieComponent } from './pages/movie/movie.component';
-import { GenresComponent } from './pages/genres/genres.component';
-import { TvShowsComponent } from './pages/tv-shows/tv-shows.component';
-import { MoviesComponent } from './pages/movies/movies.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TvShowsComponent } from './pages/tv-shows/tv-shows.component';
 
 const routes: Routes = [
   {
     path: '', //root page
     component: HomeComponent
   },
-  {
-    path: 'movies',
-    component: MoviesComponent
-  },
+  // {
+  //   path: 'movies',
+  //   component: MoviesComponent
+  // },
   {
     path: 'tv_shows',
     component: TvShowsComponent
   },
   {
-    path: 'genres',
-    component: GenresComponent
+    path: 'tv_show/:id',
+    component: TvShowDataComponent
   },
+  // // {
+  //   path: 'genres',
+  //   component: GenresComponent
+  // },
   {
     path: 'movie/:id',
     component: MovieComponent

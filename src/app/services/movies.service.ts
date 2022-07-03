@@ -1,4 +1,4 @@
-import { Movie, MovieDto, MovieVideoDto, Photo } from './../models/movie';
+import { Movie, MovieDto, MovieVideoDto, Photo, Credits, Genre, GenresDto } from './../models/movie';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { of, switchMap } from 'rxjs';
@@ -44,6 +44,10 @@ export class MoviesService {
     ); 
   }
 
+  getMovieCast(id: number){
+    return this.http.get<Credits>(`${this.baseUrl}${id}/credits?${this.apiKey}`);
+  }
+
   getMoviePhoto(id: number) {
     return this.http.get<Photo>(`${this.baseUrl}${id}/images?${this.apiKey}`).pipe(
       switchMap((response)=>{
@@ -65,5 +69,18 @@ export class MoviesService {
   getMovie(id: number) {
     return this.http.get<Movie>(`${this.baseUrl}${id}?${this.apiKey}`);
   }
+
+  getGenres(){
+    return this.http.get<GenresDto>(`https://api.themoviedb.org/3/genre/movie/list?${this.apiKey}`).pipe(
+      switchMap((response)=>{
+        return of (response.genres);
+      })
+    ); 
+  }
+
+  
+  // getGenres(){
+  //   return this.http.get<GenreDto>(`https://api.themoviedb.org/3/genre/movie/list?${this.apiKey}`);
+  // }
 
 }
