@@ -1,0 +1,31 @@
+<ng-container *ngIf="itemType=='movieData'">
+    <ng-container  *ngIf="itemData">
+        <a class="movie-item" [routerLink]="'/movie/'+itemData.id">
+            <div class="movie-item-rating">
+                <i class="material-icons">star</i>
+                <span>{{itemData.vote_average}}</span>/10
+            </div> 
+            <div class="movie-item-image">
+                <a href=""></a>
+                <img [src]="'https://image.tmdb.org/t/p/'+imgSizes.small + itemData.poster_path">
+            </div>
+            <div class="movie-item-title">{{itemData.title}}</div>
+        </a>
+    </ng-container>
+</ng-container>
+
+<ng-container *ngIf="itemType=='tvData'">
+    <ng-container  *ngIf="itemData">
+        <a class="movie-item" [routerLink]="'/tv_show/'+itemData.id">
+            <div class="movie-item-rating">
+                <i class="material-icons">star</i>
+                <span>{{itemData.vote_average}}</span>/10
+            </div> 
+            <div class="movie-item-image">
+                <a href=""></a>
+                <img [src]="'https://image.tmdb.org/t/p/'+imgSizes.small + itemData.poster_path">
+            </div>
+            <div class="movie-item-title">{{itemData.name}}</div>
+        </a>
+    </ng-container>
+</ng-container>

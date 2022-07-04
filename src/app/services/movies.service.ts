@@ -20,10 +20,10 @@ export class MoviesService {
   //     return of(response.results.slice(0, count));
   //   }))
   // }
-  getMovies(movieType: string = 'upcoming', count = 20 ){
+  getMovies(movieType: string){
     return this.http.get<MovieDto>(`${this.baseUrl}${movieType}?${this.apiKey}`).pipe(
       switchMap((response)=>{
-        return of (response.results.slice(0,count));
+        return of (response.results.slice(0,20));
       })
     );
   } 
@@ -36,6 +36,13 @@ export class MoviesService {
     );
   }
 
+  searchMoviesQuery(searchValue: string, page: number){
+    // console.log("query = ",searchValue);
+    const multiSearch = "https://api.themoviedb.org/3/search/multi?query="+searchValue+"&"+"page="+page+"&"+this.apiKey;
+    console.log("query = ",multiSearch);
+    return this.http.get(multiSearch);
+  }
+
   getMovieVideos(id: number){
     return this.http.get<MovieVideoDto>(`${this.baseUrl}${id}/videos?${this.apiKey}`).pipe(
       switchMap((response)=>{
@@ -43,6 +50,8 @@ export class MoviesService {
       })
     ); 
   }
+
+  
 
   getMovieCast(id: number){
     return this.http.get<Credits>(`${this.baseUrl}${id}/credits?${this.apiKey}`);

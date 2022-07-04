@@ -21,6 +21,12 @@ import { TvShowsComponent } from './pages/tv-shows/tv-shows.component';
 import { TvItemBannerComponent } from './pages/tv-item-banner/tv-item-banner.component';
 import { TvItemComponent } from './pages/tv-item/tv-item.component';
 import { TvShowDataComponent } from './pages/tv-show-data/tv-show-data.component';
+import { MoviesComponent } from './pages/movies/movies.component';
+import { GenresComponent } from './pages/genres/genres.component';
+import { GenreComponent } from './pages/genre/genre.component';
+import { GenreItemComponent } from './pages/genre-item/genre-item.component';
+import {InputTextModule} from 'primeng/inputtext';
+import { SearchResultComponent } from './pages/search-result/search-result.component';
 
 
 @NgModule({
@@ -38,6 +44,11 @@ import { TvShowDataComponent } from './pages/tv-show-data/tv-show-data.component
     TvItemBannerComponent,
     TvItemComponent,
     TvShowDataComponent,
+    MoviesComponent,
+    GenresComponent,
+    GenreComponent,
+    GenreItemComponent,
+    SearchResultComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +59,8 @@ import { TvShowDataComponent } from './pages/tv-show-data/tv-show-data.component
     TabViewModule,
     ImageModule,
     CarouselModule,
-    CommonModule
+    CommonModule,
+    InputTextModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

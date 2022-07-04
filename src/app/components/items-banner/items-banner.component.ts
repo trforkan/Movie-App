@@ -32,6 +32,9 @@ export class ItemsBannerComponent implements OnInit {
     if(this.title == 'Top Rated Movies'){
       this.movieType = 'top_rated';
     }
+    if(this.title == 'Now Playing Movies'){
+      this.movieType = 'now_playing';
+    }
     // console.log(this.movieType);
     this.getPagedMovies(1);
 
