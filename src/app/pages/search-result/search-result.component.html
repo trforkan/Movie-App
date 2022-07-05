@@ -1,16 +1,40 @@
-<!-- <div class="container">
+<!-- {{searchValue}} -->
+<!-- Search -->
+<div class="container">
+    <div class="grid">
+        <div class="col-12">
+            <div class="p-fluid">
+                <span class="p-input-icon-left">
+                    <i class="pi pi-search"></i>
+                    <input type="text" pInputText placeholder="Search" [(ngModel)]="searchValue" (change)="searchChanged() " />
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- search -->
+
+<div class="container">
 
     <div class="grid" >
 
-        <div class="col-6 md:col-3 lg:col-3" *ngFor="let item of MoviesList">
+        <div class="col-6 md:col-3 lg:col-3" *ngFor="let item of MoviesList"> -->
+            <!-- <p>{{item.media_type|json}}</p> -->
+            <ng-container *ngIf="item.media_type=='movie'">
+                <app-movie-item [itemData]="item" [movieType]="item.media_type"></app-movie-item>
+            </ng-container>
 
-            <app-movie-item [itemData]="item" [movieType]="movieType"></app-movie-item>
-        </div>
+            <ng-container *ngIf="item.media_type!='movie'">
+                <app-tv-item [itemData]="item" [tvShowType]="item.media_type"></app-tv-item>
+            </ng-container>
+            
+    </div>
     </div>
     <div>
         <p-paginator [rows]="20" [totalRecords]="10000" (onPageChange)="paginate($event)"></p-paginator>
     </div>
-</div> -->
+</div>
 
-working search
-{{query}}
+<!-- working search -->

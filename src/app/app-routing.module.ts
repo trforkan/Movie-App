@@ -40,10 +40,12 @@ const routes: Routes = [
     path: 'movie/:id',
     component: MovieComponent
   },
+
   {
     path: 'search',
     component: SearchResultComponent
   },
+
   // {
   //   path: '**',
   //   redirectTo: ''
