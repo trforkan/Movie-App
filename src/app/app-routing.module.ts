@@ -46,11 +46,11 @@ const routes: Routes = [
     component: SearchResultComponent
   },
 
-  // {
-  //   path: '**',
-  //   redirectTo: ''
-  //   // component: HomeComponent
-  // }
+  {
+    path: '**',
+    redirectTo: ''
+    // component: HomeComponent
+  }
 ];
 
 @NgModule({
