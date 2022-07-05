@@ -20,7 +20,7 @@
 
     <div class="grid" >
 
-        <div class="col-6 md:col-3 lg:col-3" *ngFor="let item of MoviesList"> -->
+        <div class="col-6 md:col-3 lg:col-3" *ngFor="let item of MoviesList">
             <!-- <p>{{item.media_type|json}}</p> -->
             <ng-container *ngIf="item.media_type=='movie'">
                 <app-movie-item [itemData]="item" [movieType]="item.media_type"></app-movie-item>
